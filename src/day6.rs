@@ -19,7 +19,10 @@ fn input_generator(input: &str) -> Input {
 
 #[aoc(day6, part1)]
 fn days_80(input: &Input) -> usize {
-    let mut input = input.into_iter().map(|(&l, &r)| (l, r)).collect::<Vec<(u8, usize)>>();
+    let mut input = input
+        .into_iter()
+        .map(|(&l, &r)| (l, r))
+        .collect::<Vec<(u8, usize)>>();
 
     for _ in 0..80 {
         let mut map = HashMap::with_capacity(8);
@@ -44,7 +47,10 @@ fn days_80(input: &Input) -> usize {
 
 #[aoc(day6, part2)]
 fn days_256(input: &Input) -> usize {
-    let mut input = input.into_iter().map(|(&l, &r)| (l, r)).collect::<Vec<(u8, usize)>>();
+    let mut input = input
+        .into_iter()
+        .map(|(&l, &r)| (l, r))
+        .collect::<Vec<(u8, usize)>>();
 
     for _ in 0..256 {
         let mut map = HashMap::with_capacity(8);
