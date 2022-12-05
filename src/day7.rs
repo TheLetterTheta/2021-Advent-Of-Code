@@ -12,12 +12,11 @@ fn input_generator(input: &str) -> Input {
 
 #[aoc(day7, part1)]
 fn find_align(input: &Input) -> u64 {
-    let (mut min, mut total) = (1, u64::MAX);
+    let mut total = u64::MAX;
 
     for test in 1..*input.into_iter().max().unwrap() {
         let new_total = input.iter().map(|n| n.abs_diff(test)).sum();
         if new_total < total {
-            min = test;
             total = new_total;
         } else {
             // as soon as we reach this - we are
@@ -31,7 +30,7 @@ fn find_align(input: &Input) -> u64 {
 
 #[aoc(day7, part2)]
 fn find_exp(input: &Input) -> u64 {
-    let (mut min, mut total) = (1, u64::MAX);
+    let mut total = u64::MAX;
 
     for test in 1..*input.into_iter().max().unwrap() {
         let new_total = input
@@ -39,7 +38,6 @@ fn find_exp(input: &Input) -> u64 {
             .map(|n| (0..=n.abs_diff(test)).sum::<u64>())
             .sum();
         if new_total < total {
-            min = test;
             total = new_total;
         }
     }
